@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RareDeer | Men's Collection</title>
+  <link rel="stylesheet" href="raredeer.css">
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="logo">RareDeer</div>
+    <div class="nav-links" id="navLinks">
+      <a href="Index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn" id="productBtn">Products ▾</button>
+        <div class="dropdown-content" id="dropdownMenu">
+          <a href="Clothing.html">Clothing</a>
+          <a href="Fabrics.html">Fabric</a>
+        </div>
+      </div>
+      <a href="Manufacture.html">Manufacturing</a>
+      <a href="FAQS.html">FAQs</a>
+      <a href="Contact2.html">Contact</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <script>
+    // Navbar toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const productBtn = document.getElementById('productBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      dropdownMenu.classList.remove('active');
+    });
+
+    productBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+  </script>
+  <body>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h6>Looking for the best custom clothing manufacturer in India?</h6>
+        <h1>We are a custom-made clothing manufacturer & fabrics export house from Pune, India.</h1>
+        <p>Crafting world-class fabrics and private label apparel for global brands — combining tradition,
+          technology, and timeless design.</p>
+        <a href="contact.html" class="btn">Let’s Talk</a>
+      </div>
+    </section>
+<script>  window.addEventListener("load", () => {
+        const content = document.querySelector(".hero-content");
+        setTimeout(() => {
+          content.classList.add("visible");
+        }, 300);
+      });</script>
+<!-- founder  -->
+
+<section class="founder-section">
+  <div class="founder-wrapper">
+    <div class="founder-photo">
+      <img src="https://www.freeiconspng.com/uploads/blue-user-icon-32.jpg" alt="Mr Darpan Thakar">
+      <div class="photo-glow"></div>
+    </div>
+
+    <div class="founder-content">
+      <h2>Mr. Darpan Thakar</h2>
+      <p class="title">Founder & Visionary Leader — 16TH JULY EXPORTS</p>
+      <p>
+        A trailblazer in the Indian textile industry, <strong>Mr Darpan Thakar</strong> founded 16TH JULY EXPORTS with
+        a clear purpose — to redefine fashion manufacturing through innovation, ethics, and precision.
+      </p>
+      <p>
+        With over <strong>20 years of leadership</strong> experience, he has transformed a small family business into one
+        of India’s fastest-growing global apparel exporters. His journey from the factory floor to leading international
+        collaborations reflects passion, discipline, and creativity.
+      </p>
+      <p>
+        Today, under his guidance, the company is known for <em>premium quality, sustainable fabrics</em>, and
+        world-class craftsmanship — inspiring the next generation of makers.
+      </p>
+      <div class="signature">— Darpan Thakar</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Add smooth fade-in animation when section appears
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".founder-wrapper");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) section.classList.add("visible");
+    });
+  }, { threshold: 0.2 });
+  observer.observe(section);
+});
+</script>
+
+<!-- our team  -->
+<!-- ===== OUR TEAM SECTION ===== -->
+<section class="team-section">
+  <h2>Our Team</h2>
+  <p class="team-intro">
+    Behind every design, every stitch, and every innovation is a team of creative thinkers and skilled artisans who
+    bring ideas to life. Meet the people who make 16TH JULY EXPORTS stand out.
+  </p>
+
+  <div class="team-container">
+    <div class="team-member">
+      <img src="https://cdn-icons-png.flaticon.com/512/147/147142.png" alt="Team Member" />
+      <h3>Riya Sharma</h3>
+      <p>Design Lead</p>
+      <span>Riya brings elegance and modern flair to every collection with her eye for global fashion trends.</span>
+    </div>
+
+    <div class="team-member">
+      <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="Team Member" />
+      <h3>Arjun Mehta</h3>
+      <p>Production Head</p>
+      <span>With 15+ years in garment production, Arjun ensures every product meets international quality standards.</span>
+    </div>
+
+    <div class="team-member">
+      <img src="https://cdn-icons-png.flaticon.com/512/236/236832.png" alt="Team Member" />
+      <h3>Anjali Verma</h3>
+      <p>Marketing Manager</p>
+      <span>Anjali’s storytelling and brand strategy connect our work with audiences across continents.</span>
+    </div>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="info-content">
+    <h1>Removing Buying Agents</h1>
+    <p>As a high-quality clothing manufacturer & exporter ourselves, we don’t require sourcing agents or
+      mediators. This avoids miscommunication and provides transparency.</p>
+    <p>Confidentiality & security of your designs. We, as a clothing manufacturer, secure your designs from the
+      moment we receive your tech packs & design details — unlike sourcing agents who share your designs with
+      several inexperienced manufacturers, leading to a high possibility of plagiarism.</p>
+    <p>Experienced & innovating workforce. Our craftsmen and women are skilled in developing garments as per the
+      tech packs with a minimum of 99% accuracy in the first sample development process itself. Most of them have
+      over two decades of experience.</p>
+    <p>Custom special fabric finishes. We can provide you with a wide variety of mechanical & chemical finishes
+      like water resistance, UV protection, stain repellent, antimicrobial, and fire retardant along with
+      different washing procedures like stone washing & acid washing.</p>
+    <p>Custom trims & accessories. As per the buyer’s requirements, we can source custom-made clothing accessories
+      that put your brand on par with international standards.</p>
+  </div>
+</section>
+
+
+</style>
+
+<script>
+  // Scroll reveal animation
+  document.addEventListener("scroll", () => {
+    const elements = document.querySelectorAll(".info-content h1, .info-content p");
+    const triggerBottom = window.innerHeight * 0.9;
+    elements.forEach(el => {
+      const boxTop = el.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) el.classList.add("visible");
+    });
+  });
+</script>
+
+      <!-- footer  -->
+
+      <!-- 🌙 Modern Centered Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <h2 class="footer-logo">RareDeer</h2>
+          <p class="footer-text">
+            Redefining fashion with class, comfort, and confidence. <br />
+            Join our community for style updates and exclusive offers.
+          </p>
+
+          <!-- Newsletter -->
+          <form id="newsletterForm" class="newsletter">
+            <input type="email" id="emailInput" placeholder="Enter your email" required />
+            <button type="submit" id="newsletterBtn">Subscribe</button>
+          </form>
+          <p id="message"></p>
+
+          <!-- Links -->
+          <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+
+          <!-- Social -->
+          <div class="footer-social">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+          </div>
+
+          <p class="footer-bottom">
+            © <span id="year"></span> RareDeer. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+      <!-- footer 🌙 CSS -->
+    
+      <!-- 🌙 JS -->
+      
+      <script src="Raredeer.js"></script>
+    </body>
+
+</html>
