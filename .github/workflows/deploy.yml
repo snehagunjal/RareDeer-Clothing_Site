@@ -3,20 +3,27 @@ name: Deploy Website to GitHub Pages
 on:
   push:
     branches:
-      - main  # Runs when you push to main branch
+      - main  # or 'master' if that’s your branch
+
+permissions:
+  contents: write   # 💥 This line gives permission to push to gh-pages
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout your code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Deploy files to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload files
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .   # Folder where your index.html is located
+          path: .  # Your site folder, e.g. "." or "./dist" or "./build"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
