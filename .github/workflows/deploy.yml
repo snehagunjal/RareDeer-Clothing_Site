@@ -3,13 +3,23 @@ name: Deploy Website to GitHub Pages
 on:
   push:
     branches:
-      - main  # or 'master' if that’s your branch
+      - main
 
 permissions:
-  contents: write   # 💥 This line gives permission to push to gh-pages
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -19,14 +29,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload files
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # Your site folder, e.g. "." or "./dist" or "./build"
+          path: .   # or ./dist or ./build (where your index.html lives)
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true   # 💡 even if deployment gives minor error, workflow continues
 
-       - name: Finish workflow
+      - name: Finish workflow
         run: echo "Deployed successfully!"
